@@ -1,0 +1,226 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": "",
+            "title": "Myydään sohva",
+            "desc": "Kaunis sohva",
+            "category": "Huonekalut",
+            "loc": "Oulu",
+            "images": "link.com/image.jpg",
+            "price": "50,99",
+            "post_date": "20.7.2021",
+            "delivery": [
+                "pickup",
+                "shipping"
+            ],
+            "seller_name": {
+                "fname": "Jarkko",
+                "lname": "Salminen",
+                "phone_num": "0405959593"
+            }
+        }
+    ],
+    "required": [
+        "id",
+        "title",
+        "desc",
+        "category",
+        "loc",
+        "images",
+        "price",
+        "post_date",
+        "delivery",
+        "seller_name"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Myydään sohva"
+            ]
+        },
+        "desc": {
+            "$id": "#/properties/desc",
+            "type": "string",
+            "title": "The desc schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Kaunis sohva"
+            ]
+        },
+        "category": {
+            "$id": "#/properties/category",
+            "type": "string",
+            "title": "The category schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Huonekalut"
+            ]
+        },
+        "loc": {
+            "$id": "#/properties/loc",
+            "type": "string",
+            "title": "The loc schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Oulu"
+            ]
+        },       
+       	"images": {
+            "$id": "#/properties/images",
+            "type": "array",
+            "title": "The images schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "base64",
+                    "base64"
+                ]
+            ],
+            "additionalItems": false,
+            "items": {
+                "$id": "#/properties/images/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/images/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "base64"
+                        ]
+                    }
+                ]
+            },
+	    "maxItems": 1
+        },
+        "price": {
+            "$id": "#/properties/price",
+            "type": "number",
+            "title": "The price schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "50,99"
+            ]
+        },
+        "post_date": {
+            "$id": "#/properties/post_date",
+            "type": "string",
+            "title": "The post_date schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "20.7.2021"
+            ]
+        },
+        "delivery": {
+            "$id": "#/properties/delivery",
+            "type": "array",
+            "title": "The delivery schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "pickup",
+                    "shipping"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/delivery/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/delivery/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "pickup",
+                            "shipping"
+                        ]
+                    }
+                ]
+            }
+        },
+        "seller_name": {
+            "$id": "#/properties/seller_name",
+            "type": "object",
+            "title": "The seller_name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "fname": "Jarkko",
+                    "lname": "Salminen",
+                    "phone_num": "0405959593"
+                }
+            ],
+            "required": [
+                "fname",
+                "lname",
+                "phone_num"
+            ],
+            "properties": {
+                "fname": {
+                    "$id": "#/properties/seller_name/properties/fname",
+                    "type": "string",
+                    "title": "The fname schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Jarkko"
+                    ]
+                },
+                "lname": {
+                    "$id": "#/properties/seller_name/properties/lname",
+                    "type": "string",
+                    "title": "The lname schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "Salminen"
+                    ]
+                },
+                "phone_num": {
+                    "$id": "#/properties/seller_name/properties/phone_num",
+                    "type": "string",
+                    "title": "The phone_num schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "0405959593"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}
