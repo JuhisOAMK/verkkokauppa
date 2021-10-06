@@ -12,7 +12,7 @@
             "desc": "Kaunis sohva",
             "category": "Huonekalut",
             "loc": "Oulu",
-            "images": "link.com/image.jpg",
+            "images": "base64 encoded image, max 4",
             "price": "50,99",
             "post_date": "20.7.2021",
             "delivery": [
