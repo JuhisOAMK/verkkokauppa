@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<title>Mainpage</title>
+
+<body>
+
+	<h1>How to use</h1>
+	<p>Head to postman, and use this url https://verkkokauppa-t9.herokuapp.com/registerBasic to post following details in Json form: username, email and password </p>
+	<p>{ "username": "user", "email": "user@mail.com", "password": "1234" } </p>
+	<p></p>
+	<p>Then use /post to make new post in following format using POST:</p>
+	<p>{</p>
+	<p>    "id": "",</p>
+	<p>    "title": "Myydään Tietokone",</p>
+	<p>    "desc": "Hyvä kuntoinen tietokone",</p>
+	<p>    "category": "Laitteet",</p>
+	<p>    "loc": "Oulu",</p>
+	<p>    "images":  ["base64 encoded image"],</p>
+	<p>    "price": 300,</p>
+	<p>    "post_date": "5.10.2021",</p>
+	<p>    "delivery": [</p>
+	<p>        "delivery"</p>
+	<p>    ],</p>
+	<p>    "seller_name": {</p>
+	<p>        "fname": "Jarmo",</p>
+	<p>        "lname": "Kuikkala",</p>
+	<p>        "phone_num": "040696969"</p>
+	<p>    }</p>
+	<p>}</p>
+	<p>after post is successfully posted, then it will be visible in /posts using GET</p>
+	<p>You can edit posts with /posts/(your own post id here), you cannot edit other users posts you can get posts ID from /posts </p>
+<p></p>
+
+<p>You can delete your own post with /posts/(your own post id here) using DELETE, you cannot delete other users posts</p>
+<p>You can filter posts by category with GET /searchbyCategory/(category), but you must be very specific</p>
+<p>Also, you can filter posts by location with GET /searchbyLocation/(location)</p>
+<p>And finally, you can search with by date with GET /searchbyDate/(date) </p>
+<p>for example /searchbyDate/20.7.2021</p>
+
+
+</body>
+</html>
